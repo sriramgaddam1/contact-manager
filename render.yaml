@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: contact-manager
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: JPA_SHOW_SQL
+        value: "false"
+      - key: JPA_DDL_AUTO
+        value: update
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
